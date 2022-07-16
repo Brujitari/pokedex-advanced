@@ -4,21 +4,22 @@ import images from "utils/imgLoader";
 import { useForm } from "react-hook-form";
 import { useRef } from "react";
 import { useNavigate } from "react-router-dom";
-
+import { useRegister } from "hooks";
 
 import Input from "components/input";
 import Button from "components/button";
 
 function Register() {
-  const { handleSubmit, register } = useForm();
-  const navigate = useNavigate();
   const submitRef = useRef(null);
+  const { handleSubmit, register } = useForm();
+  const signup = useRegister({ onSuccess: () => navigate("/login") });
+  const navigate = useNavigate();
 
   const handleClick = () => navigate("/login");
   const handleButton = () => submitRef.current.click();
 
   const onSubmit = (data) => {
-    console.log(data);
+    signup(data);
   };
 
   return (

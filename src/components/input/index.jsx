@@ -1,4 +1,4 @@
-import React from 'react'
+import "./styles.scss";
 
 function Input({ position, small, fn = () => { }, ...props }) {
     return (
