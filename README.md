@@ -1,2 +1,2 @@
 ## Pokédex mobile App
-Connected to ![pokeapi](https://pokeapi.co/)
+Connected to the PokeAPI with axios created with React
